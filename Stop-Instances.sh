@@ -1,8 +1,13 @@
 # Variables
-projectId='aisarch-test-project'
-body='{"instances":"instance-2,instance-3","zone":"europe-north1-a"}' #Instance names comma separated
-schedule='0 18 * * *' #https://crontab.guru/#0_18_*_*_*
-timeZone='Europe/London'
+#projectId='aisarch-test-project'
+#body='{"instances":"instance-2,instance-3","zone":"europe-north1-a"}' #Instance names comma separated
+#schedule='0 18 * * *' #https://crontab.guru/#0_18_*_*_*
+#timeZone='Europe/London'
+
+projectId=$1
+body=$2 #Instance names comma separated
+schedule=$3 #https://crontab.guru/#0_18_*_*_*
+timeZone=$4
 
 # Auth to project
 gcloud config set project $projectId
