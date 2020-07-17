@@ -3,6 +3,7 @@ Stop Gogole Clood Platform Instances insdie specific project by Instance name an
 
 From Google Cloud platform "Cloud Shell" run following commands:  
  ```bash
+ #Example with argument explanation
  bash Stop-Instances.sh 'aisarch-test-project' 'ProjectId' 'Json with comma separated instance list and zone' 'Schedule Cron format' 'TimeZone'
  ```
 ```bash
