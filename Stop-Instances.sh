@@ -6,7 +6,7 @@
 
 projectId=$1
 body=$2 #Instance names comma separated
-schedule=$3 #https://crontab.guru/#0_18_*_*_*
+schedule="$3" #https://crontab.guru/#0_18_*_*_*
 timeZone=$4
 
 # Auth to project
