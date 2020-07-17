@@ -26,7 +26,7 @@ git clone https://github.com/bbz94/Stop-GCPInstances
 dirPath=$(readlink -f Stop-GCPInstances/Function)
 
 # Deploy the Start Cloud function
-gcloud functions deploy stop-instances-fun  \
+gcloud functions deploy stopInstances \
 --trigger-topic=stop-instances \
 --region=europe-west1 \
 --ingress-settings=internal-only \
