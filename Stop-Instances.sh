@@ -21,8 +21,9 @@ gcloud projects add-iam-policy-binding $projectId \
 gcloud pubsub topics create stop-instances
 
 # Creating Cloud Functions
+cd $Home
 git clone https://github.com/bbz94/Stop-GCPInstances
-dirPath=$(readlink -f Stop-GCPInstances)
+dirPath=$(readlink -f Stop-GCPInstances/Function)
 
 # Deploy the Start Cloud function
 gcloud functions deploy stop-instances-fun  \
