@@ -8,7 +8,7 @@ exports.stopInstances = (event, context) => {
     var instanceSplit = instancesList.split(',');
     instanceSplit.forEach(instance => {
         var Compute = require('@google-cloud/compute');
-        var compute = Compute();
+        var compute = new Compute();
         var zone = compute.zone(zoneVar);
         var vm = zone.vm(instance);
         vm.stop(function (err, operation, apiResponse) { console.log('Stopped '+instance); });
