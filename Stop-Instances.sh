@@ -13,14 +13,14 @@ timeZone=$4
 gcloud config set project $projectId
 
 # Creating the Service Account
-gcloud iam service-accounts create compute-instance-admin-sa \
-  --description="Service account with computeinstanceadmin role" \
-  --display-name="compute-instance-admin-sa"
+#gcloud iam service-accounts create compute-instance-admin-sa \
+#  --description="Service account with computeinstanceadmin role" \
+#  --display-name="compute-instance-admin-sa"
 
 # Assign the computeInstanceAdmin role to the service account
-gcloud projects add-iam-policy-binding $projectId \
-  --role roles/compute.instanceAdmin \
-  --member serviceAccount:compute-instance-admin-sa@$projectId.iam.gserviceaccount.com
+#gcloud projects add-iam-policy-binding $projectId \
+#  --role roles/compute.instanceAdmin \
+#  --member serviceAccount:compute-instance-admin-sa@$projectId.iam.gserviceaccount.com
 
 # Creating the Pub/Sub Topics
 gcloud pubsub topics create stop-instances
@@ -35,9 +35,10 @@ gcloud functions deploy stopInstances \
 --trigger-topic=stop-instances \
 --region=europe-west1 \
 --ingress-settings=internal-only \
---service-account=compute-instance-admin-sa@$projectId.iam.gserviceaccount.com \
+--service-account=$projectId@appspot.gserviceaccount.com \
 --source=$dirPath \
 --runtime=nodejs10 \
+--memory=128MB \
 --quiet
 
 # Setting up the Cloud Scheduler
