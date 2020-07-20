@@ -1,5 +1,7 @@
 {
-  "name": "sample-http",
-  "dependencies": {"@google-cloud/compute": "2.0.2"},
-  "version": "0.0.1"
+    "name": "sample-http",
+    "dependencies": {
+        "@google-cloud/compute": "^2.0.0"
+    },
+    "version": "0.0.1"
 }
