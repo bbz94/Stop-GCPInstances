@@ -13,5 +13,5 @@ exports.stopInstances = (event, context) => {
         var vm = zone.vm(instance);
         vm.stop(function (err, operation, apiResponse) { console.log('Stopped '+instance); });
     });
-    res.status(200).send('Success stopped instances');
+    console.log('Success stopped instances');
 };
